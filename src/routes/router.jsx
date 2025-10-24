@@ -7,11 +7,13 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import NewsDetails from "../pages/NewsDetails";
 import PrivateRoute from "../provider/PrivateRoute";
+import ErrorPage from "../pages/ErrorPage";
 
 const router = createBrowserRouter([
     {
         path: "/",
         Component: HomeLayout,
+        loader: () => fetch("/news.json").then(res => res.json()),
         children: [
             {
                 path: "",
@@ -27,22 +29,18 @@ const router = createBrowserRouter([
     },
     {
         path: "about",
-        element: <h1>auth layout</h1>
-    },
-    {
-        path: "news",
-        element: <h1>news layout</h1>
+        Component: ErrorPage,
     },
     {
         path: "auth",
         Component: AuthLayout,
         children: [
             {
-                path: "login",   // relative path
+                path: "login",
                 Component: Login,
             },
             {
-                path: "register",  // relative path
+                path: "register",
                 Component: Register,
             }
         ]
@@ -54,7 +52,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/*",
-        element: <h1>error 404 : not found</h1>
+        Component: ErrorPage,
     }
 
 

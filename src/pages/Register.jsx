@@ -129,7 +129,6 @@ const Register = () => {
                     <div className="col-span-1">
                         <label className="block font-semibold text-black mb-1">Photo URL</label>
                         <input
-                            required
                             name='photoUrl'
                             type="text"
                             placeholder="Enter your photo URL"
