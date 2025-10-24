@@ -3,9 +3,11 @@ import bookmark from "../../assets/bookmark.png";
 import share from "../../assets/share.png";
 import starsIcon from "../../assets/star.png";
 import eye from "../../assets/eye.png";
+import { Link } from "react-router";
 
 const NewsCard = ({ news }) => {
     const {
+        id,
         title,
         details,
         image_url,
@@ -56,9 +58,9 @@ const NewsCard = ({ news }) => {
             {/* Description */}
             <p className="text-[#706F6F] text-justify mt-3">
                 {details?.slice(0, 200)}...{" "}
-                <span className="text-orange-500 cursor-pointer">
+                <Link to={`/news-details/${id}`} className="text-orange-500 cursor-pointer">
                     Read More
-                </span>
+                </Link>
             </p>
 
             <hr className="my-3 border-t-[1px] border-gray-200" />
