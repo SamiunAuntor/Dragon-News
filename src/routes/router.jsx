@@ -1,10 +1,24 @@
 import { createBrowserRouter } from "react-router";
-import Home from "../layouts/Home";
+import HomeLayout from "../layouts/HomeLayout";
+import Home from "../pages/Home";
+import CategoryNews from "../pages/CategoryNews";
 
-const router = createBrowserRouter ([
+const router = createBrowserRouter([
     {
         path: "/",
-        Component: Home,
+        Component: HomeLayout,
+        children: [
+            {
+                path: "",
+                Component: Home,
+                loader: () => fetch("/news.json").then(res => res.json())
+            },
+            {
+                path: "/category/:id",
+                Component: CategoryNews,
+                loader: () => fetch("/news.json").then(res => res.json())
+            }
+        ]
     },
     {
         path: "auth",
@@ -18,7 +32,7 @@ const router = createBrowserRouter ([
         path: "/*",
         element: <h1>error 404 : not found</h1>
     }
-    
+
 ])
 
 

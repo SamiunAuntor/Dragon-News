@@ -20,3 +20,8 @@
 * {
     font-family: "Poppins", sans-serif;
 }
+
+a.active {
+    color: black;
+    background-color: #E7E7E7;
+}
