@@ -1,16 +1,100 @@
-# React + Vite
+# Dragon News
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Live Link
+[Visit Dragon News Live Site](https://dragon-news-7fc7b.web.app/)
 
-Currently, two official plugins are available:
+## Overview
+Dragon News is a modern news portal built with React and Firebase. It provides users with the latest news across various categories, user authentication, and personalized news reading experience.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
+- **User Authentication**: Secure login and registration system using Firebase Authentication
+- **News Categories**: Browse news by different categories
+- **Latest News**: Stay updated with the most recent news articles
+- **Responsive Design**: Fully responsive layout for all devices
+- **Private Routes**: Protected routes for authenticated users
+- **News Details**: Detailed view for each news article
 
-## React Compiler
+## Technologies Used
+- **Frontend**: React 19, React Router 7
+- **Styling**: Tailwind CSS, DaisyUI
+- **Authentication**: Firebase Authentication
+- **Deployment**: Firebase Hosting
+- **Build Tool**: Vite
+- **Additional Libraries**:
+  - react-fast-marquee
+  - date-fns
+  - sweetalert2
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Project Structure
+```
+dragon-news/
+├── public/
+│   ├── categories.json
+│   └── news.json
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── firebase/
+│   ├── layouts/
+│   ├── pages/
+│   ├── provider/
+│   └── routes/
+└── ...
+```
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Installation
+1. Clone the repository
+   ```bash
+   git clone <repository-url>
+   cd dragon-news
+   ```
+
+2. Install dependencies
+   ```bash
+   npm install
+   # or
+   yarn
+   ```
+
+3. Create a `.env` file in the root directory with your Firebase configuration
+   ```
+   VITE_FIREBASE_API_KEY=your-api-key
+   VITE_FIREBASE_AUTH_DOMAIN=your-auth-domain
+   VITE_FIREBASE_PROJECT_ID=your-project-id
+   VITE_FIREBASE_STORAGE_BUCKET=your-storage-bucket
+   VITE_FIREBASE_MESSAGING_SENDER_ID=your-messaging-sender-id
+   VITE_FIREBASE_APP_ID=your-app-id
+   ```
+
+4. Start the development server
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+## Build for Production
+```bash
+npm run build
+# or
+yarn build
+```
+
+## Deployment
+The project is configured for Firebase Hosting. After building the project:
+
+```bash
+firebase deploy
+```
+
+## Contributing
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+This project is licensed under the MIT License.
