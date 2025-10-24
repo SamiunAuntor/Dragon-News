@@ -3,7 +3,7 @@ import Marquee from 'react-fast-marquee';
 import { useLoaderData } from 'react-router';
 
 const LatestNews = () => {
-    const news = useLoaderData(); // ✅ get news here
+    const news = useLoaderData(); // get news here
 
     return (
         <div className='flex items-center gap-5 bg-base-200 p-4'>
